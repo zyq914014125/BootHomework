@@ -17,7 +17,7 @@ public class H1Controller {
 @Autowired
     H1ReadConfig h1ReadConfig;
 
-@RequestMapping(value = "Frist/homework")
+@RequestMapping("Frist/homework")
 public String H1homework(ModelMap m){
     Map<String,String>  map=h1ReadConfig.getAnswer();
     m.addAttribute("AnswerMap",map);
