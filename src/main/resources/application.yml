@@ -7,9 +7,22 @@ spring:
       suffix: .html
   thymeleaf:
     prefix: classpath:/templates/
-
+  #数据库
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootTest?characterEncoding=utf-8
+    userName: root
+    password: 123456789
 ##日志
 #logging:
 #  config: classpath:config/logback.xml
 
+server:
+  ssl:
+    key-store: classpath:.keystore
+    key-password: 123456
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.home.moudle.home1.mapper
 

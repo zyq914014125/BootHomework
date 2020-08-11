@@ -27,8 +27,6 @@ public class H1ReadConfig {
     private String valuethrid;
     @Value("${answer.step.valuefourth}")
     private String valuefourth;
-
-
     public Map<String,String> getAnswer(){
         String [] namelist=name.split("/n");
         Map<String,String> map=new HashMap<>();
