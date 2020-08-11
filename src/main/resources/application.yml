@@ -1,22 +1,15 @@
 ##默认使用配置
-#spring:
-#  #数据库
-#  datasource:
-#    driverClassName: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/ruoyi?characterEncoding=utf-8
-#    userName: root
-#    password: 123456789
-#  #html
-#  mvc:
-#    view:
-#      prefix: /
-#      suffix: .html
-#  thymeleaf:
-#    prefix: classpath:/templates/
-#
-##公共配置与profiles选择无关
-#mybatis:
-#  typeAliasesPackage: com.example.mapper
-#  mapperLocations: classpath:mapper/*.xml
+spring:
+  #html
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  thymeleaf:
+    prefix: classpath:/templates/
+
+##日志
+#logging:
+#  config: classpath:config/logback.xml
 
 
