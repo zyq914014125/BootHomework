@@ -13,9 +13,28 @@ spring:
     url: jdbc:mysql://localhost:3306/springbootTest?characterEncoding=utf-8
     userName: root
     password: 123456789
+    #jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    serialization:
+      fail-on-empty-beans: true
+
+
+
 ##日志
-#logging:
+#logging: ,.
 #  config: classpath:config/logback.xml
+#    level:
+#      org:
+#        hibernate:
+#            SQL: DEBUG
 
 server:
   ssl:

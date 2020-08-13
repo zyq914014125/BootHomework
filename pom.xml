@@ -73,6 +73,11 @@
             <version>1.2.12</version>
         </dependency>
 
+<!--jpa-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
     </dependencies>
 
 
