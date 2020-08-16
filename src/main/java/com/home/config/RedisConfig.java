@@ -43,6 +43,7 @@ public class RedisConfig {
 
     public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory factory){
         RedisTemplate<String,Object> redisTemplate=new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(factory);
         //Key:String 序列化
         StringRedisSerializer stringRedisSerializer=new StringRedisSerializer();
         //value:Jackson 序列化

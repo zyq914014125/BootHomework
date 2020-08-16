@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 /**
  * @author Mr.X
  **/
-@Repository
-public interface Clazz extends JpaRepository<Clazz,Integer> {
-}
+//@Repository
+//public interface Clazz extends JpaRepository<Clazz,Integer> {
+//}
