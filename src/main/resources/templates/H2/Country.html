@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header('country')" />
+</head>
+<body>
+<center>
+    <div class="container">
+        <h1>welcome</h1>
+        <div th:if="${countryById!=null}" class="container">
+            <p>getCountryBycountryId,测试</p>
+            <p th:text="${countryById.toString()}"></p>
+        </div>
+        <div th:if="${countryByName!=null}" class="container">
+            <p>countryByName,测试</p>
+            <p th:text="${countryByName.toString()}"></p>
+        </div>
+        <div th:if="${RedisCountryById!=null}" class="container">
+            <p>RediscountryById,测试</p>
+            <p th:text="${RedisCountryById.toString()}"></p>
+        </div>
+    </div>
+</center>
+</body>
+</html>

@@ -53,9 +53,9 @@ public class StudentService {
      * @return
      */
     public Page<Student> getStudentBySerachvo(Serachvo serachvo){
-        //orderby 判空，空按照默认id排序
+        //orderby 判是否有文本，空按照默认id排序
         String orderby= StringUtils.isBlank(serachvo.getOrderBy())?"studentId":serachvo.getOrderBy();
-        //sort 判空，排序规则空，默认降序,equalsIgnoreCase大小写忽略判等
+        //sort 判是否有文本，排序规则空，默认降序,equalsIgnoreCase大小写忽略判等
         Sort.Direction direction=StringUtils.isBlank(serachvo.getSort())||serachvo.getSort().equalsIgnoreCase("DESC")?Sort.Direction.DESC:Sort.Direction.ASC;
         //Page 起始页 以orderby,direction为排序规则
         Pageable pageable= PageRequest.of(serachvo.getCurrentPage()-1,serachvo.getPageSize(),Sort.by(direction,orderby));

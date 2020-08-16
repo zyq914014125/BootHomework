@@ -14,7 +14,7 @@ import java.util.List;
  * @author Mr.X
  **/
 @RestController
-@RequestMapping("/City")
+@RequestMapping("/city")
 public class CityControllerRest {
     @Autowired
     private CityServiceImpl cityService;
@@ -48,7 +48,7 @@ public class CityControllerRest {
      * @param city
      * @return
      */
-    @PutMapping(value = "/Update",consumes = "application/x-www-form-urlencoded")
+    @PutMapping(value = "/update",consumes = "application/x-www-form-urlencoded")
     public Result<City> Update(@ModelAttribute City city ){
         return cityService.Update(city);
     }
@@ -58,7 +58,7 @@ public class CityControllerRest {
      * @param city
      * @return
      */
-    @PostMapping(value = "/Insert",consumes = "application/json")
+    @PostMapping(value = "/insert",consumes = "application/json")
     public Result<City> Insert(@RequestBody City city){
         return cityService.Insert(city);
     }
@@ -68,7 +68,7 @@ public class CityControllerRest {
      * @param cityId
      * @return
      */
-    @DeleteMapping("/Delete/{cityId}")
+    @DeleteMapping("/delete/{cityId}")
     public Result<Object> Delete(@PathVariable int cityId){
         return cityService.Delete(cityId);
     }

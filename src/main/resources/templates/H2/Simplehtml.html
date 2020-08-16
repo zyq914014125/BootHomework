@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header('Simplehtml')" />
+</head>
+<body>
+<center>
+    <table>
+        <thead>
+        <th>步骤</th>
+        <th>代码</th>
+        </thead>
+    </table>
+        <tbody>
+        <tr th:each="map:${AnswerMap.entrySet()}">
+            <td th:text="${map.getKey()}"></td>
+            <td th:text="${map.getValue()}"></td>
+        </tr>
+        </tbody>
+    <button onclick="homework1()">homework1</button>
+    <button onclick="homework2()">homework2</button>
+    <p id="answer"></p>
+</center>
+</body>
+<th:block th:include="include :: H1-js" />
+</html>

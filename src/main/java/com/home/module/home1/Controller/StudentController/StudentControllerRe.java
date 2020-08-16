@@ -14,24 +14,24 @@ import java.util.List;
  * @author Mr.X
  **/
 @RestController
-@RequestMapping("/Student")
+@RequestMapping("/student")
 public class StudentControllerRe {
     @Autowired
     StudentService studentService;
 
-    @PostMapping ("/InsertStrudent")
+    @PostMapping ("/insertStrudent")
     public Result<Student> InsertStudent(@RequestBody Student student){
         return studentService.InsertStudent(student);
     }
-    @PostMapping("/StudentPage")
+    @PostMapping("/studentPage")
     public Page<Student> StudentPage(@RequestBody Serachvo serachvo){
         return studentService.getStudentBySerachvo(serachvo);
     }
-    @GetMapping("/Student/{studentId}")
+    @GetMapping("/student/{studentId}")
     public Student FindOneStudent(@PathVariable int studentId){
         return studentService.getOneStudentById(studentId);
     }
-    @GetMapping("/StudentALL")
+    @GetMapping("/studentALL")
     public List<Student> FindAll(){
         return studentService.getAllStudent();
     }

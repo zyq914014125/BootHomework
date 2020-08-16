@@ -1,25 +1,23 @@
-package com.home.module.home1.Controller;
-
-import com.home.module.home1.vo.H1ReadConfig;
+package com.home.module.home2.H2Controller;
+import com.home.module.home2.vo.H2ReadConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.Map;
 
 /**
  * @author Mr.X
  **/
 @Controller
-public class H1Controller {
+public class H2ControllertoHtml {
 @Autowired
-    H1ReadConfig h1ReadConfig;
-
-@RequestMapping("Frist/homework")
+  private  H2ReadConfig h1ReadConfig;
+@RequestMapping("frist/homework")
 public String H1homework(ModelMap m){
-//    Map<String,String>  map=h1ReadConfig.getAnswer();
-//    m.addAttribute("AnswerMap",map);
-    return "H1/Cityhtml";
+    Map<String,String>  map=h1ReadConfig.getAnswer();
+    m.addAttribute("AnswerMap",map);
+    return "H2/Simplehtml";
 }
+
 }

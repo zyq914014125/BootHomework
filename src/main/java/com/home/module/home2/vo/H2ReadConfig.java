@@ -1,13 +1,8 @@
-package com.home.module.home1.vo;
-
+package com.home.module.home2.vo;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,7 +11,7 @@ import java.util.Map;
 @Component
 @PropertySource("classpath:config/H1answer.properties")
 //@ConfigurationProperties(prefix = "answer.step")
-public class H1ReadConfig {
+public class H2ReadConfig {
     @Value("${answer.step.name}")
     private String name;
     @Value("${answer.step.valuefirst}")

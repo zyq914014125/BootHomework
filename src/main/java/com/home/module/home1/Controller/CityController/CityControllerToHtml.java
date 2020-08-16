@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
+ * @Description 配合html使用
  * @author Mr.X
  **/
 @RestController
-@RequestMapping("/City")
+@RequestMapping("/city")
 public class CityControllerToHtml {
     @Autowired
     private CityServiceImpl cityService;
