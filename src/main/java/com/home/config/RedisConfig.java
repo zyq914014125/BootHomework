@@ -32,7 +32,6 @@ import java.util.Arrays;
 @EnableCaching
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 public class RedisConfig {
-
     /**
      * @Overwrise redisTemplate
      * @Serializer String,Json
