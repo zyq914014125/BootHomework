@@ -2,6 +2,7 @@ package com.home.module.home1.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.home.Aspect.ServiceAspectAnnoaction;
 import com.home.Serach.Result;
 import com.home.Serach.Serachvo;
 import com.home.module.home1.entity.City;
@@ -44,6 +45,7 @@ public class CityServiceImpl {
      * @param city
      * @return new Resulet<City>
      */
+    @ServiceAspectAnnoaction
     @Transactional
     public Result<City> Insert(City city){
         cityMapper.Insert(city);
