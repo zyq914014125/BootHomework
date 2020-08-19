@@ -32,16 +32,19 @@ public class TestController {
     public String index() {
         return "index";
     }
+
     @RequestMapping("/filtertest")
     @ResponseBody
     public String FilterTest(HttpServletRequest request, @RequestParam String input, ModelMap map) {
         String input2 = request.getParameter("input");
         return "Test   " + input + "  and   " + input2;
     }
+
     @GetMapping("/interceptor")
     public String interceptortest() {
         return "index";
     }
+
     /**
      * @param file
      * @param redirectAttributes 传递msg信息
@@ -70,14 +73,14 @@ public class TestController {
     }
 
     /**
-     * @Description 文件组上传测试
      * @param file
      * @param redirectAttributes
      * @param map
      * @return
+     * @Description 文件组上传测试
      */
     @PutMapping(value = "/files", consumes = "application/x-www-form-urlencoded")
-    public String files(@RequestParam MultipartFile[] file, RedirectAttributes redirectAttributes,ModelMap map) {
+    public String files(@RequestParam MultipartFile[] file, RedirectAttributes redirectAttributes, ModelMap map) {
         map.addAttribute("page", "H2/file");
         String filePath = "G:\\manventest\\FileLoad";
         if (file.length == 0) {
@@ -99,13 +102,14 @@ public class TestController {
         }
         return "redict:/H2/index";
     }
+
     @GetMapping("/file")
-    public ResponseEntity<Resource> download(@RequestParam String fileName){
+    public ResponseEntity<Resource> download(@RequestParam String fileName) {
         Resource resource;
-        try{
-            resource=new UrlResource(Paths.get("G:\\manventest\\FileLoad" + fileName).toUri());
+        try {
+            resource = new UrlResource(Paths.get("G:\\manventest\\FileLoad" + fileName).toUri());
             //判断资源可用
-            if(resource.exists()&&resource.isReadable()){
+            if (resource.exists() && resource.isReadable()) {
                 //处理http请求
                 return ResponseEntity
                         .ok()

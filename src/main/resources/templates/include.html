@@ -1,6 +1,12 @@
 <head th:fragment=header(title)>
     <meta charset="UTF-8">
-    <link type="text/css" th:href="@{/css/bootstrap.css}">
+<!--    <link type="text/css" th:href="@{/css/bootstrap.css}">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" th:href="@{/images/favicon.ico}" type="image/ico" />
 </head>
 <div th:fragment="footer">
     <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
@@ -8,4 +14,113 @@
 <!--simplehtml引用的js-->
 <div th:fragment="H1-js">
     <script type="text/javascript" th:src="@{/js/h1.js}"></script>
+</div>
+<!--通用css-->
+<div th:fragment="css">
+<!-- Custom Theme Style -->
+<div th:fragment="custom-min-css">
+<link th:href="@{/css/custom.min.css}" rel="stylesheet">
+</div>
+<!-- Bootstrap -->
+<div th:fragment="bootstrap-min-css">
+<link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+</div>
+<!-- bootstrap-daterangepicker -->
+<div th:fragment="dateangepicker-css">
+<link th:href="@{/vendors/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
+</div>
+<!-- JQVMap -->
+<div th:fragment="jqvmap-min-css">
+<link th:href="@{/vendors/jqvmap/dist/jqvmap.min.css}" rel="stylesheet"/>
+</div>
+<!-- bootstrap-progressbar -->
+<div th:fragment="bootstrap-progressbar-3-3-4-min-css">
+<link th:href="@{/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}" rel="stylesheet">
+</div>
+<!-- iCheck -->
+<div th:fragment="green-css">
+<link th:href="@{/vendors/iCheck/skins/flat/green.css}" rel="stylesheet">
+</div>
+<!-- NProgress -->
+<div th:fragment="nprogress-css">
+<link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet">
+</div>
+<!-- Font Awesome -->
+<div th:fragment="font-awesome-min-css">
+<link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+</div>
+</div>
+
+
+<!--通用js-->
+<div th:fragment="js">
+<!-- jQuery -->
+    <div th:fragment="jquery-min-js">
+    <script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+    </div>
+<!-- Bootstrap -->
+    <div th:fragment="bootstrap-bundle-min-js">
+<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+    </div>
+<!-- FastClick -->
+    <div th:fragment="bootstrap-bundle-min-js">
+<script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
+    </div>
+<!-- NProgress -->
+    <div th:fragment="nprogress-js">
+<script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+    </div>
+<!-- Chart.js -->
+    <div th:fragment="Chart-min-js">
+<script th:src="@{/vendors/Chart.js/dist/Chart.min.js}"></script>
+    </div>
+<!-- gauge.js -->
+    <div th:fragment="nprogress-js">
+<script th:src="@{/vendors/gauge.js/dist/gauge.min.js}"></script>
+    </div>
+<!-- bootstrap-progressbar -->
+    <div th:fragment="bootstrap-progressbar-min-js">
+<script th:src="@{/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}"></script>
+    </div>
+<!-- iCheck -->
+    <div th:fragment="icheck-min-js">
+<script th:src="@{/vendors/iCheck/icheck.min.js}"></script>
+    </div>
+<!-- Skycons -->
+    <div th:fragment="skycons-js">
+<script th:src="@{/vendors/skycons/skycons.js}"></script>
+    </div>
+<!-- Flot -->
+    <div th:fragment="jquery-flot">
+<script th:src="@{/vendors/Flot/jquery.flot.js}"></script>
+<script th:src="@{/vendors/Flot/jquery.flot.pie.js}"></script>
+<script th:src="@{/vendors/Flot/jquery.flot.time.js}"></script>
+<script th:src="@{/vendors/Flot/jquery.flot.stack.js}"></script>
+<script th:src="@{/vendors/Flot/jquery.flot.resize.js}"></script>
+    </div>
+<!-- Flot plugins -->
+    <div th:fragment="jquery-flot-orderBars">
+<script th:src="@{/vendors/flot.orderbars/js/jquery.flot.orderBars.js}"></script>
+<script th:src="@{/vendors/flot-spline/js/jquery.flot.spline.min.js}"></script>
+<script th:src="@{/vendors/flot.curvedlines/curvedLines.js}"></script>
+    </div>
+<!-- DateJS -->
+    <div th:fragment="date-js">
+<script th:src="@{/vendors/DateJS/build/date.js}"></script>
+    </div>
+<!-- JQVMap -->
+    <div th:fragment="jquery-vmap-js">
+<script th:src="@{/vendors/jqvmap/dist/jquery.vmap.js}"></script>
+<script th:src="@{/vendors/jqvmap/dist/maps/jquery.vmap.world.js}"></script>
+<script th:src="@{/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js}"></script>
+    </div>
+<!-- bootstrap-daterangepicker -->
+    <div th:fragment="moment-min">
+<script th:src="@{/vendors/moment/min/moment.min.js}"></script>
+<script th:src="@{/vendors/bootstrap-daterangepicker/daterangepicker.js}"></script>
+    </div>
+<!-- Custom Theme Scripts -->
+    <div th:fragment="custom-min-js">
+<script th:src="@{/js/custom.min.js}"></script>
+    </div>
 </div>

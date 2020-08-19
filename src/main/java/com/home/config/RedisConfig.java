@@ -39,7 +39,7 @@ public class RedisConfig {
      * @return
      */
     @Bean
-
+    @SuppressWarnings("all")
     public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory factory){
         RedisTemplate<String,Object> redisTemplate=new RedisTemplate<>();
         redisTemplate.setConnectionFactory(factory);

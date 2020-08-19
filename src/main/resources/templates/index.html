@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head th:include="include :: header('index')">
-
-
-<body>
-<center>
-
-</br>
-   <div th:if="${page}">
-       <div th:replace="${page}"></div>
+<title>ZZ</title>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+<!--        左-->
+        <div class="col-md-3 left_col">
+            <div th:replace="/production/left.html"></div>
+        </div>
+<!--        顶-->
+        <div class="top_nav">
+            <div th:replace="/production/topmenu.html"></div>
+        </div>
+<!--        中-->
+<!--        <div class="right_col" role="main">-->
+<!--            <div th:replace="${page}"></div>-->
+<!--        </div>-->
+<!--        底部-->
+        <div>
+            <div th:replace="/production/footer.html"></div>
+        </div>
     </div>
-</center>
+</div>
+<div th:include="include::css"></div>
+<div th:include="include::js"></div>
 </body>
 </html>
