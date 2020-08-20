@@ -17,11 +17,11 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/springbootTest"
                         userId="root" password="123456789"/>
         <!-- 生成实体类 实体bean文件 -->
-        <javaModelGenerator targetPackage="com.home.module.home1.entity" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.home.module.home3.entity" targetProject="src/main/java"/>
         <!-- mapper xml文件 -->
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
         <!-- mapper 接口文件 -->
-        <javaClientGenerator targetPackage="com.home.module.home1.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.home.module.home3.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <!-- schema为数据库名，oracle需要配置，mysql不需要配置。
@@ -29,7 +29,7 @@
          domainObjectName 是要生成的实体类名(可以不指定)
          enableXXXByExample 默认为 true， 为 true 会生成一个对应Example帮助类，帮助你进行条件查询，不想要可以设为false
          -->
-        <table tableName="m_country" domainObjectName="Country"
+        <table tableName="user" domainObjectName="user"
                enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" selectByExampleQueryId="false"></table>
 

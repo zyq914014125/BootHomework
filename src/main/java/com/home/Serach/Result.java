@@ -13,11 +13,16 @@ public class Result<T>{
     public Result() {
     }
 
-    public Result(T successResponse, T insert_success) {
+    public Result(ResultState successResponse, String insert_success) {
+        this.state=successResponse.state;
+        this.message=insert_success;
     }
 
 
     public Result(ResultState successResponse, String insert_success, T city) {
+      this.state=successResponse.state;
+      this.message=insert_success;
+      object=city;
     }
 
     public int getState() {

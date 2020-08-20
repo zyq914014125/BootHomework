@@ -8,47 +8,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/ico" />
 </head>
-<div th:fragment="footer">
+
+
+<div th:fragment="jquery-3-1-1-min-js">
     <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
 </div>
 <!--simplehtml引用的js-->
 <div th:fragment="H1-js">
     <script type="text/javascript" th:src="@{/js/h1.js}"></script>
 </div>
+
+
+
+
+
 <!--通用css-->
 <div th:fragment="css">
 <!-- Custom Theme Style -->
-<div th:fragment="custom-min-css">
-<link th:href="@{/css/custom.min.css}" rel="stylesheet">
-</div>
+    <div th:fragment="custom-min-css">
+        <link th:href="@{/css/custom.min.css}" rel="stylesheet">
+    </div>
 <!-- Bootstrap -->
-<div th:fragment="bootstrap-min-css">
-<link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
-</div>
+    <div th:fragment="bootstrap-min-css">
+        <link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+    </div>
 <!-- bootstrap-daterangepicker -->
-<div th:fragment="dateangepicker-css">
-<link th:href="@{/vendors/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
-</div>
+    <div th:fragment="dateangepicker-css">
+        <link th:href="@{/vendors/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
+    </div>
 <!-- JQVMap -->
-<div th:fragment="jqvmap-min-css">
-<link th:href="@{/vendors/jqvmap/dist/jqvmap.min.css}" rel="stylesheet"/>
-</div>
+    <div th:fragment="jqvmap-min-css">
+        <link th:href="@{/vendors/jqvmap/dist/jqvmap.min.css}" rel="stylesheet"/>
+    </div>
 <!-- bootstrap-progressbar -->
-<div th:fragment="bootstrap-progressbar-3-3-4-min-css">
-<link th:href="@{/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}" rel="stylesheet">
-</div>
+    <div th:fragment="bootstrap-progressbar-3-3-4-min-css">
+        <link th:href="@{/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}" rel="stylesheet">
+    </div>
 <!-- iCheck -->
-<div th:fragment="green-css">
-<link th:href="@{/vendors/iCheck/skins/flat/green.css}" rel="stylesheet">
-</div>
+    <div th:fragment="green-css">
+        <link th:href="@{/vendors/iCheck/skins/flat/green.css}" rel="stylesheet">
+    </div>
 <!-- NProgress -->
-<div th:fragment="nprogress-css">
-<link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet">
-</div>
+    <div th:fragment="nprogress-css">
+        <link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet">
+    </div>
 <!-- Font Awesome -->
-<div th:fragment="font-awesome-min-css">
-<link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
-</div>
+    <div th:fragment="font-awesome-min-css">
+        <link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+    </div>
+    <!-- Animate.css -->
+    <div th:fragment="animate-min-css">
+            <link th:href="@{/vendors/animate.css/animate.min.css}" rel="stylesheet">
+    </div>
 </div>
 
 

@@ -28,25 +28,26 @@ public class ShiroCofig {
 
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-//        // 设置login URL
-//        shiroFilterFactoryBean.setLoginUrl("/Start/startpage");
-//        // 登录成功后要跳转的链接
-//        shiroFilterFactoryBean.setSuccessUrl("/Start/success.do");
-//        // 未授权的页面
-//        shiroFilterFactoryBean.setUnauthorizedUrl("Start/error");
-//        // 拦截器.
+        // 设置login URL
+        shiroFilterFactoryBean.setLoginUrl("/user/index");
+        // 登录成功后要跳转的链接
+        shiroFilterFactoryBean.setSuccessUrl("/user/main/index");
+        // 未授权的页面
+        shiroFilterFactoryBean.setUnauthorizedUrl("/user/error");
+        // 拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
-//        // 设置登录的URL为匿名访问，因为一开始没有用户验证
-//        filterChainDefinitionMap.put("/Start/Login.do", "anon");
-//        filterChainDefinitionMap.put("/Exception.class", "anon");
-//        // 我写的url一般都是xxx.do，根据你的情况自己修改
-//        // 退出系统的过滤器
-//        filterChainDefinitionMap.put("/Start/loginout.do", "logout");
-//        // 现在资源的角色
-//        filterChainDefinitionMap.put("/Start/success.do", "roles[admin]");
-//        // filterChainDefinitionMap.put("/user.html", "roles[user]");
-//        // 固定格式
-//        filterChainDefinitionMap.put("/**", "authc");
+        // 设置登录的URL为匿名访问，因为一开始没有用户验证
+        filterChainDefinitionMap.put("/user/index", "anon");
+        filterChainDefinitionMap.put("/use/put", "anon");
+        filterChainDefinitionMap.put("/use/post", "anon");
+        filterChainDefinitionMap.put("/user/main/index", "authc");
+        // 退出系统的过滤器
+        filterChainDefinitionMap.put("/Start/loginout.do", "logout");
+        // 现在资源的角色
+//        filterChainDefinitionMap.put("/user/main/index", "roles[admin]");
+        // filterChainDefinitionMap.put("/user.html", "roles[user]");
+        // 固定格式
+        filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

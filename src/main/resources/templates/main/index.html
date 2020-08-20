@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
-<head th:include="include :: header('index')">
-<title>ZZ</title>
+<head th:include="include :: header('mainindex')">
+    <title>main</title>
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-<!--        左-->
+        <!--        左-->
         <div class="col-md-3 left_col">
             <div th:replace="/main/left.html"></div>
         </div>
-<!--        顶-->
+        <!--        顶-->
         <div class="top_nav">
             <div th:replace="/main/topmenu.html"></div>
         </div>
-<!--        中-->
-<!--        <div class="right_col" role="main">-->
-<!--            <div th:replace="${page}"></div>-->
-<!--        </div>-->
-<!--        底部-->
+        <!--        中-->
+        <!--        <div class="right_col" role="main">-->
+        <!--            <div th:replace="${page}"></div>-->
+        <!--        </div>-->
+        <!--        底部-->
         <div>
             <div th:replace="/main/footer.html"></div>
         </div>
