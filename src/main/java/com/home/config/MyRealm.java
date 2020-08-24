@@ -41,11 +41,11 @@ public class MyRealm extends AuthorizingRealm {
         //System.out.println(p);
         if (loginUser != null) {
             //2.设置shiro比对器身份
-            Object principal = loginUser.getName();
+            Object principal = loginUser.getUserName();
             //3.设置比对器里面的密码(把数据库里面的密码作为比对密码)
             Object credentials = loginUser.getPassword();
             //4.自动给令牌类里面的用户名设置加盐方式
-            ByteSource salt = ByteSource.Util.bytes(loginUser.getName());
+            ByteSource salt = ByteSource.Util.bytes(loginUser.getUserName());
             //5.设置realm的名称
             String realmName = this.getName();
             //new SimpleAuthenticationInfo(principal,credentials,salt,realmName)才是真正的认证
@@ -53,8 +53,8 @@ public class MyRealm extends AuthorizingRealm {
            如何认证：
            将上面的principal和token1里面的用户名来比对
            将上面的credentials和token1里面的密码来比对
-           因为spring-shiro.xml里面配置加密方式 所以会自动把token1里面的密码以MD5加密，加密1024次
-          因为上面传了个salt，表示再把token1里面的密码再以salt加盐
+           因为shirocofig里面配置加密方式 所以会自动把token1里面的密码以MD5加密，加密1024次
+           因为上面传了个salt，表示再把token1里面的密码再以salt加盐
            * */
             return new SimpleAuthenticationInfo(principal, credentials, salt, realmName);
         } else {

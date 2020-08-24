@@ -19,17 +19,16 @@ import javax.servlet.http.Cookie;
  * @author Mr.X
  **/
 @Controller
-@RequestMapping("user")
 public class loginController {
 @Autowired
     UserServiceImpl userService;
-    @GetMapping("/index")
+    @GetMapping("/login/index")
     public String index(){
         return "login/index";
     }
-    @GetMapping("/main/index")
+    @GetMapping("/index")
     public String login(){
-        return "main/index";
+        return "/index";
     }
     @GetMapping("/error")
     public String error(){

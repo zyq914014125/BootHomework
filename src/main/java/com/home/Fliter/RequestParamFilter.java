@@ -12,7 +12,7 @@ import java.io.IOException;
  * 过滤器
  * @author Mr.X
  **/
-@WebFilter(filterName = "requestParamaFilter",urlPatterns = "/**")
+@WebFilter(filterName = "requestParamaFilter",urlPatterns = "/H2/**")
 public class RequestParamFilter implements Filter {
     /**
      * @Description String.replace

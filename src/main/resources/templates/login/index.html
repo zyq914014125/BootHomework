@@ -23,9 +23,8 @@
 </body>
 <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
 <script>
-
     $("#login").click(function () {
-        var data = {name: $("#loginname").val(), password: $("#loginpassword").val()};
+        var data = {userName: $("#loginname").val(), password: $("#loginpassword").val()};
         console.log(data);
         $.ajax({
             type:"post",
@@ -36,7 +35,7 @@
             success: function (data) {
                 console.log(data.message)
                 if (data.state == 200) {
-                    alert("success");
+                    alert("欢迎");
                     location.href = data.message;
                 } else {
                     alert(data.message);
@@ -45,7 +44,7 @@
         })
     });
     $("#registerbutton").click(function () {
-        var data={name:$("#name").val(),email:$("#email").val(),password:$("#password").val()};
+        var data={userName:$("#userName").val(),password:$("#password").val()};
         console.log(data);
         $.ajax({
             type:"post",
@@ -62,6 +61,8 @@
             }
         })
     });
+
+
     show_num = [];
     $(function() {
         draw(show_num);

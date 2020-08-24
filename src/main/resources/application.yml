@@ -46,6 +46,14 @@ spring:
     #超时
     timeout: 1000
 
+  # spring local resource config
+  resource:
+    path: /upload/
+    path.pattern: /upload/**
+    folder:
+      windows: G:/upload
+      linux: /upload/
+
 
 ##log
 #logging: ,.

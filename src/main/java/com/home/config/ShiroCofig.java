@@ -29,25 +29,25 @@ public class ShiroCofig {
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 设置login URL
-        shiroFilterFactoryBean.setLoginUrl("/user/index");
+        shiroFilterFactoryBean.setLoginUrl("/login/index");
         // 登录成功后要跳转的链接
-        shiroFilterFactoryBean.setSuccessUrl("/user/main/index");
+        shiroFilterFactoryBean.setSuccessUrl("/index");
         // 未授权的页面
-        shiroFilterFactoryBean.setUnauthorizedUrl("/user/error");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
         // 拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         // 设置登录的URL为匿名访问，因为一开始没有用户验证
-        filterChainDefinitionMap.put("/user/index", "anon");
+        filterChainDefinitionMap.put("/login/index", "anon");
         filterChainDefinitionMap.put("/use/put", "anon");
         filterChainDefinitionMap.put("/use/post", "anon");
-        filterChainDefinitionMap.put("/user/main/index", "authc");
+        filterChainDefinitionMap.put("/index", "authc");
         // 退出系统的过滤器
         filterChainDefinitionMap.put("/Start/loginout.do", "logout");
         // 现在资源的角色
 //        filterChainDefinitionMap.put("/user/main/index", "roles[admin]");
         // filterChainDefinitionMap.put("/user.html", "roles[user]");
         // 固定格式
-        filterChainDefinitionMap.put("/**", "authc");
+//        filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
