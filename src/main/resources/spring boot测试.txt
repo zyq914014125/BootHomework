@@ -1,0 +1,165 @@
+一、选择题（共12小题，每小题2.5分，共30分）
+	以下不是spring boot优点的是 ( D )
+		A．快速搭建项目
+		B．简化配置  
+		C．自动配置  
+		D．无需容器
+	Spring Boot配置，以下哪个优先级最高（ B ）
+		A、外置：xx.jar同目录下/config/application.properties；
+		B、外置：xx.jar同目录下/config/application.yml；
+		C、内置：src/main/resources/config；
+		D、内置：src/main/resources
+	以下log日志级别哪个最高（D）
+		A、DEBUG
+		B、INFO
+		C、WARN
+		D、ERROR
+	以下不是spring boot的核心注解的是 ( D )
+		A.	@SpringBootConfiguration
+		B.	@EnableAutoConfiguration
+		C.	@ComponentScan
+		D.	@MapperScan
+	要使用springMVC的功能，需要导入那个包 ( C )
+		A．spring-boot-starter-jdbc  
+		B．spring-boot-starter-thymeleaf  
+		C．spring-boot-starter-web  
+		D．mybatis-spring-boot-starter
+	以下哪个注解不能加在类上 ( B )
+		A.	@Controller
+		B.	@ResponseBody
+		C.	@RestController
+		D.	@RequestMapping
+	当控制层上有@RestController注解时，方法中返回一个字符串“<h1>Hello</h1>”，浏览器调用的结果是 ( C )
+		A. 一级标题显示的Hello
+		B.	找不到Hello.html
+		C.	<h1>Hello</>
+		D.	Hello
+	SpringBoot项目中配置文件的格式 ( c )
+		A．properties  
+		B．yml  
+		C．两者都可以
+	不是SpringBoot核心配置文件是（A）
+		A.	bootstrap
+		B.	application
+		C.	application-dev
+	前台使用json参数格式，控制器consumer、参数使用的注解是（A）
+		A、application/josn ---- @RequestBody
+		B、application/josn ---- @ModelAttribute
+		C、application/x-www-form-urlencoded ---- @RequestBody
+		D、application/x-www-form-urlencoded ---- @ModelAttribute
+	@Pointcut("execution(public * com.thornBird.sbd.modules.*.controller.*.*(..))")，第三个*代表（A）
+		A、代表返回类型不限
+		B、代表module下所有子包
+		C、代表所有类
+		D、代表所有方法
+	Url匹配风格中/admin*，以下哪个匹配不正确（D）
+		A、/admin
+		B、/admin1
+		C、/admin123
+		D、/admin/1
+	Mybatis框架中，插入数据使用那个注解（B）
+		A、@Update
+		B、@Insert
+		C、@Select
+		D、@InsertMapping
+
+二、填空题（共5小题，每小题5分，共25分）
+	获取配置文件的属性值，使用哪个注解__@Value______________；
+	Java配置依赖的2个注解是___@Configuration_______，____@Bean_______;
+	Spring Boot修改tomcat端口号为9090应该怎么写？___ connector.setPort(9090);_________;
+	自定义拦截器需要实现____HandlerInterceptor____接口；
+	过滤器需要使用___WebFilter______注解;
+	上传文件，使用__MultipartFile__接收文件对象，consumer使用__multipart/form-data___;
+
+三、问答题（每题5分，共25分）
+	阐述 Spring Boot 特性，举一个例子来解释 Staters 的内容；
+		1.习惯优于配置 
+		2.项目快速搭建，配置简化
+		3.内置servlet容器
+		4.集成主流框架
+		
+
+	Mybatis传参中，#{*}、${*}的区别？
+		“#”代表占位，表现形式为“？”
+		“$”表示拼接，表现形式为“+”
+
+	简述Restful规则？
+ 		统一资源接口，url指向资源。用户请求的url使用同一个URL而用请求方式：get/post/delete/put等方式对请求的处理方法进        行区分。这样可以在前后台分离的开发中让前端开发人员不会对请求的资源地址产生混淆，形成一个统一的接口。
+	
+
+        简述Git使用流程，写几个常用Git命令？
+		1.建本地仓库 $ git init  
+Initialized empty Git repository in
+		2.缓存项目
+		3.commit 项目 $ git commit -m 
+		4.连接远程库 $ git remote add origin *	
+		5.pull
+
+        简述shiro两大功能实现流程；
+		用户认证
+			securityManager构造-》用户输入-》subject.login()-》securityManager.login()-》authenticator认证-》		myream身份验证
+		用户授权
+			securityManager构造-》	subject.isPermitted->SecurityManager执行授权->ModularRealmAuthorizer执行		myrealm->调用myrealm的授权方法：doGetAuthorizationInfo->myrealm从数据库查询权限数据
+
+四、编程题（每题10分，共20分）
+	1、提供一个接口，返回 List<User> 列表，对该列表进行排序、保留10条数据；页面端使用 ajax post 方式提交请求，包装查询参数，获取接口返回数据，并遍历数据渲染到页面上 table 表格中；
+	
+  userMapper:                                                       
+	@Select("<script>" +													
+            "select * from user" +
+            "<where>" +
+            "<if test='keyWord!=null and keyWord!=\"\"'>" +
+            "user_name like '%${keyWord}%'" +
+            "</if>" +
+            "</where>" +
+            "<choose>" +
+            "<when test=' orderBy!=null and orderBy!=\"\"'>" +
+            "ORDER BY  ${orderBy}  ${sort}" +
+            "</when>" +
+            "<otherwise>" +
+            "ORDER BY user_id desc limit 10"  +
+            "</otherwise>" +
+            "</choose>" +
+            "</script>")
+    List<user> getusersBySerchvo(Serachvo serachvo);
+
+ service:	
+     public List<user> getusersBySerchvo(Serachvo                                                                                           serachvo) {
+        return Optional.ofNullable(userMapper.getusersBySerchvo(serachvo)).orElse(new ArrayList<>());
+    }
+controller：
+	 @PostMapping(value = "/users",consumes = "application/json")
+    public List<user> getusersBySerchvo(@RequestBody Serachvo serachvo){
+            return userService.getusersBySerchvo(serachvo);
+    }
+	
+
+	2、设计一套购物车接口，以 Cookie 或者 redis 实现
+
+
+1.
+@Configuration
+@EnableCaching
+@AutoConfigureAfter(RedisAutoConfiguration.class)
+classs RedisConfig{...}
+2.
+Entity:Markcar  
+3.
+Mapper:markmapper  extends JpaRepository<Markcar,Integer>
+4.
+service:markservice 
+5.
+controller:markcontroller(增，删，查，改）
+
+
+
+ 
+
+
+
+
+
+
+
+
+

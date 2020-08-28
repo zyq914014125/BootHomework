@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+>
 <head th:include="include :: header">
     <title>main</title>
 <body class="nav-md">
 <div th:include="include::css"></div>
-<div th:include="include::js"></div>
+<!-- jQuery -->
+<script src="/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <div class="container body">
     <div class="main_container">
         <!--        左-->
-        <div th:replace="/main/left.html"></div>
+        <div th:replace="main/left.html"></div>
         <!--        顶-->
-        <div th:replace="/main/topmenu.html"></div>
+        <div th:replace="main/topmenu.html"></div>
         <!--        中-->
         <div th:if="${page}">
             <div th:replace="${page}"></div>
@@ -20,6 +24,6 @@
 
     </div>
 </div>
-
+<div th:include="include::js"></div>
 </body>
 </html>

@@ -45,7 +45,7 @@ public class UserController {
                 // 执行登录.
                 currentUser.login(token);
                 // 登录成功...
-                return new Result<>(Result.ResultState.SUCCESS_RESPONSE,"/index");
+                return new Result<>(Result.ResultState.SUCCESS_RESPONSE," /index");
             } catch (IncorrectCredentialsException e) {
                 return new Result<>(Result.ResultState.SOMETHING_WRONG,"登录密码错误");
             } catch (ExcessiveAttemptsException e) {
@@ -92,7 +92,10 @@ public class UserController {
     public Result<String> setImg(@RequestParam MultipartFile multipartFile){
         return userService.setImg(multipartFile);
     }
-
+    @PutMapping(value = "/profile", consumes = "application/json")
+    public Result<user> updateUserProfile(@RequestBody user user) {
+        return userService.updateProfile(user);
+    }
 
 
 }

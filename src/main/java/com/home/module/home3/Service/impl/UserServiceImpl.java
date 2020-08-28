@@ -114,4 +114,8 @@ public class UserServiceImpl {
         userMapper.update(user);
         return new Result<user>(Result.ResultState.SUCCESS_RESPONSE, "Update success.",user);
     }
+
+    public user selectByusername(String userName) {
+        return userMapper.selectByPrimaryKey(userName);
+    }
 }

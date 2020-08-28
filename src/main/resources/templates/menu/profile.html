@@ -9,7 +9,6 @@
             <div class="title_left">
                 <h3>User Profile</h3>
             </div>
-
             <div class="title_right">
                 <div class="col-md-5 col-sm-5  form-group pull-right top_search">
                     <div class="input-group">
@@ -294,14 +293,6 @@
                                         <!-- end user projects -->
 
                                     </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab_content3"
-                                         aria-labelledby="profile-tab">
-                                        <p>xxFood truck fixie locavore, accusamus mcsweeney's
-                                            marfa nulla single-origin coffee squid. Exercitation +1
-                                            labore velit, blog sartorial PBR leggings next level wes
-                                            anderson artisan four loko farm-to-table craft beer twee. Qui
-                                            photo booth letterpress, commodo enim craft beer mlkshk</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +304,7 @@
 </div>
 <!-- /page content -->
 
-<div th:replace="account/profileEdit"></div>
+<div th:replace="menu/profileEdit"></div>
 
 <!-- FastClick -->
 <script src="/vendors/fastclick/lib/fastclick.js"></script>
@@ -329,7 +320,7 @@
 <script src="/plugin/moment/min/moment.min.js"></script>
 <script src="/plugin/bootstrap-daterangepicker/daterangepicker.js"></script>-->
 <!-- 上传图片 -->
-<script th:src="${'/vendors/fileinput/fileinput.min.js'}" type="text/javascript"></script>
+<script th:src="@{/vendors/fileinput/fileinput.min.js}" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -345,7 +336,7 @@
     //初始化编辑页面
     function initUserProfile(userId) {
         $.ajax({
-            url : "/use//user/{userId}" + userId,
+            url : "/use/user/{userId}" + userId,
             type : "get",
             contentType: "application/json",
             success : function (rs) {
@@ -371,7 +362,7 @@
         user.userImg = $("#userImg").val();
 
         $.ajax({
-            url : "/api/profile",
+            url : "/use/profile",
             type : "put",
             contentType: "application/json",
             data : JSON.stringify(user),
